@@ -24,6 +24,21 @@ Use with your project by adding your gradle.build file:
 * `mavenLocal()` to the `repositories{}` block
 * `compile 'com.devspark.robototextview:Android-RobotoTextView:1.0-SNAPSHOT'` to the `dependencies{}` block
 
+
+#### Usage Tips
+Follow the advice below for standard usage. If you want to use with custom styles in your `styles.xml` try it like this:
+
+```xml
+<!-- the key is declaring the xmlns namespace and NOT adding it to the attribute in the item name -->
+<resources xmlns:robotv="http://schemas.android.com/apk/res-auto>
+...
+    <style name="custom_style_text_view">
+        <item name="typeface">roboto_light</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+</resources>
+```
+
 Android-RobotoTextView
 ======================
 
