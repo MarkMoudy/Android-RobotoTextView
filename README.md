@@ -1,6 +1,33 @@
 Android-RobotoTextView
 ======================
 
+Forked Details
+======================
+Converted into an android-library project that installs to local maven repo as an .ARR file.
+
+#### Importing as AAR into Android Studio Project
+
+Steps:
+* Clone a copy of this repository
+* Create a local.properties file in your project with
+
+```
+sdk.dir= <path/to/your/android/sdk>
+```
+* At the root of the repository execute ./gradlew install. If successful you should see output like this:
+
+```
+Uploading: com/devspark/robototextview/Android-RobotoTextView/1.0-SNAPSHOT/Android-RobotoTextView-1.0-20131205.200226-2.aar to repository remote at file:///Users/<username>/.m2/repository
+Transferring 1735K from remote
+Uploaded 1735K
+:install
+```
+
+Use with your project by adding your gradle.build file:
+* `mavenLocal()` to the `repositories` block
+* `compile 'com.devspark.robototextview:Android-RobotoTextView:1.0-SNAPSHOT'` to the `dependencies()` block
+
+
 Implementation of a [TextView](http://developer.android.com/reference/android/widget/TextView.html) and all its direct/indirect subclasses with native support for the [Roboto](http://developer.android.com/design/style/typography.html) fonts, includes the brand new [Roboto Slab](http://www.google.com/fonts/specimen/Roboto+Slab) fonts.
 
 Implemented next views:

@@ -7,7 +7,15 @@ buildscript {
     }
 }
 
-apply plugin: 'android'
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+apply plugin: 'android-library'
+
+group = 'com.devspark.robototextview'
+version = '1.0-SNAPSHOT'
 
 android {
     compileSdkVersion 19
@@ -22,3 +30,13 @@ android {
         }
     }
 }
+
+apply plugin: 'maven'
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository url: 'file://' + new File(System.getProperty('user.home'), '.m2/repository').absolutePath
+        }
+    }
+}
+task install(dependsOn: uploadArchives)
